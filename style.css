@@ -1,0 +1,250 @@
+/** @format */
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	height: 100%;
+	width: 100%;
+}
+
+#main {
+	height: 100%;
+	width: 100%;
+	display: flex;
+}
+#left {
+	width: 50%;
+	height: 100%;
+	position: relative;
+	color: #fff;
+	overflow: hidden;
+}
+#left img {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0%;
+	z-index: 10;
+	object-fit: cover;
+	object-position: top;
+	animation-name: roti;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	animation-fill-mode: forwards;
+	animation-delay: 1s;
+	opacity: 0;
+	/* display: none; */
+}
+
+#nav {
+	display: flex;
+	align-items: center;
+	height: 10%;
+	width: 100%;
+	justify-content: space-between;
+	padding: 40px;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	z-index: 19;
+	animation-name: mc;
+	animation-delay: 1.5s;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+#nav h1 {
+	font-size: 26px;
+	font-family: gilroy;
+}
+#nav i {
+	font-size: 30px;
+}
+
+#left > h1 {
+	position: absolute;
+	right: 8%;
+	bottom: 8%;
+	color: #fff;
+	font-size: 78px;
+	font-family: voyage gilroy;
+	text-align: right;
+	line-height: 1;
+	animation-name: bc;
+	animation-delay: 1.5s;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	animation-fill-mode: forwards;
+	z-index: 10;
+	opacity: 0;
+}
+
+#right {
+	width: 50%;
+	height: 100%;
+	position: relative;
+	color: black;
+}
+
+#img2 {
+	position: absolute;
+	height: 50%;
+	width: 30%;
+	top: 30%;
+	left: 20%;
+	/* transform: translate(0%, -50%); */
+	object-fit: cover;
+	animation-name: move;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	animation-fill-mode: forwards;
+}
+#img1 {
+	position: absolute;
+	height: 25%;
+	width: 20%;
+	top: 0%;
+	object-fit: cover;
+	right: 40%;
+	object-position: center;
+	animation-name: move;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	animation-fill-mode: forwards;
+}
+
+#img3 {
+	height: 25%;
+	width: 20%;
+	object-fit: cover;
+	object-position: center;
+	position: absolute;
+	bottom: 0%;
+	right: 20%;
+	animation-name: move;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	animation-fill-mode: forwards;
+}
+
+#circle {
+	height: 20%;
+	width: 20%;
+	border: 1px solid black;
+	border-radius: 50%;
+	position: absolute;
+	right: 22%;
+	top: 40%;
+	animation-name: move;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	animation-fill-mode: forwards;
+}
+
+#txt {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 15px;
+	color: black;
+}
+
+#rot {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	right: -38%;
+	top: 66%;
+	transform-origin: 0% 0%;
+	transform: rotate(-90deg);
+	gap: 15px;
+	font-size: 22px;
+}
+
+/* animation part */
+
+@keyframes move {
+	0% {
+		transform: translateX(40%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes gay {
+	0% {
+		right: -100%;
+		top: 0%;
+		opacity: 0;
+	}
+	100% {
+		right: 200%;
+		top: 0%;
+		opacity: 1;
+	}
+}
+
+#overlay {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	right: -100%;
+	top: 0%;
+	z-index: 8;
+	background-color: rgb(153, 8, 8);
+	animation-name: gay;
+	animation-delay: 0.5s;
+	animation-duration: 4.7s;
+	animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	animation-fill-mode: forwards;
+}
+
+@keyframes roti {
+	0% {
+		transform: rotate(30deg);
+		scale: 1.4;
+		opacity: 0;
+	}
+	100% {
+		transform: rotate(0deg);
+		scale: 1;
+		opacity: 1;
+	}
+}
+
+@keyframes bc {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes mc {
+	0% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
